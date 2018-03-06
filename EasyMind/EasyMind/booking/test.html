@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+    <link rel="stylesheet" href="bookingCSS.css">
+	
+	
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="dist/assets/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="dist/assets/owl.theme.default.min.css">
+	
+	
+	<!-- Calender Css -->
+	<link rel="stylesheet" href="../css/nice-date-picker.css">
+	<script src="../js/nice-date-picker.js"></script>
+    <title>Get it sorted in advance!</title>
+  </head>
+  
+
+  <body class="bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-faded">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Brand -->
+<a class="navbar-brand" href="#"><h3 style="color:#DE6262">EasyMind</h3></a>
+
+<!-- Links -->
+<div class="collapse navbar-collapse justify-content-md-center" id="nav-content">   
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link active" href="#"><h4 style="color:#DE6262">Home</h4></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#"><h4 style="color:#DE6262">Booking</h4></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#"><h4 style="color:#DE6262">How it Works</h4></a>
+</li>
+</ul>
+</div>
+<div class="collapse navbar-collapse justify-content-end">
+<ul class="nav pull-right">
+          <li class="nav-item" id="menuLogin">
+            <i class="fa fa-user fa-3x"></i>
+          </li>
+        </ul>
+</div>
+</nav>
+<section class="login-block">
+    <div class="container">
+	<div class="row">
+	
+		<div class="col-md-4 login-sec">
+		    <h2 class="text-center">Choose A date</h2>
+		<!--Calender-->
+		<div id="calendar1-wrapper2">
+		<div id="nice-date-picker-warpper"></div>
+			<span class="calendar-demo-msg"></span>
+		</div>
+<!--/Calender-->
+		</div><!--Column For the Calender-->
+		
+		<div class="col-md-8 login-sec">
+		<h2 class="text-center">Pick From the Available Sitters</h2>
+            <div class="owl-carousel">
+    <div class="item">
+
+	</div>
+    <div class="item">
+	<div class="card">
+		<h5>Name of Babysitter</h5>
+		<p>Price/Area</p>
+		</div>
+	</div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+
+</div>
+</div>
+
+
+				
+				
+				<div class="col-12 login-sec">
+				<h2 class="text-center login-sec p-0">Booking Details</h2>
+			<ul class="list-group">
+				<li class="list-group-item"><p class="font-weight-bold">Baby Sitters Name</p></li>
+				<li class="list-group-item"><p class="font-weight-bold">Time and Date</p><div id="dateChsn"></div></li>
+				<li class="list-group-item"><p class="font-weight-bold">Total Cost:</p></li>
+				</ul>
+					
+						<button type="submit" class="btn btn-success btn-lg float-right mr-4 " id="btnLogin">Complete Booking</button>
+					
+		</div>
+</section>
+
+<script> new niceDatePicker({
+    dom:document.getElementById('nice-date-picker-warpper'),
+    onClickDate:function(date){
+      document.querySelector('#dateChsn').innerHTML='Booked for '+date+' at 9PM';
+    },
+    year:2018,
+    month:3,
+	mode:'en'
+});
+</script>
+
+    <!-- Optional JavaScript -->
+	
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous></script>
+    
+    <script href="../js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	  <script>
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel({ loop:true, margin:10, nav:true, responsive:{ 0:{ items:1 }, 600:{ items:3 }, 1000:{ items:5 } } })
+});
+</script>
+  </body>
+</html>
