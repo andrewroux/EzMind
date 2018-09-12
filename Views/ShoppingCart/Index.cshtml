@@ -1,0 +1,47 @@
+﻿@model EasyMind.ViewModels.ShoppingCartViewModel
+
+<div class="row checkoutForm">
+    <h2>Your shopping cart</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Selected amount</th>
+                <th>Profile</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+    {
+        <tr>
+            <td> <input asp-for="@line.Amount" class="form-control"></td>
+            <td class="text-left">@line.Profile.UserName</td>
+            <td class="text-right">@line.Profile.Price.ToString("c")</td>
+            <td class="text-right">
+                @((line.Amount * line.Profile.Price).ToString("c"))
+            </td>
+            <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-profileId="@line.Profile.Price"></a></td>
+        </tr>
+}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.ShoppingCartTotal.ToString("c")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check out</a>
+            <a class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Add more Profile<span class="caret"></span>
+        </div>
+    </div>
+</div>

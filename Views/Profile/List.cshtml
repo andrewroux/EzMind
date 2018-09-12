@@ -1,0 +1,8 @@
+﻿@model EasyMind.ViewModels.ProfileListViewModel
+
+<div class="row marginTop">
+    @foreach (var profile in Model.Profile)
+    {
+        @Html.Partial("ProfileSummary", profile)
+    }
+</div>

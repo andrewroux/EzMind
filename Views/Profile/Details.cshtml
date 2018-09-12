@@ -1,0 +1,27 @@
+﻿@model EasyMind.Models.Profile
+
+<div class="container marginTop">
+    <div class="row">
+        <div class="card">
+            <div class="text-center view overlay hm-white-slight">
+                <img src="~/Uploads/@Model.PhotoPath" class="img-fluid" alt="">
+                <a href="#">
+                    <div class="mask waves-effect waves-light"></div>
+                </a>
+            </div>
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
+                <!--Text-->
+                <p class="card-text">@Model.AboutMe.</p>
+                <p class="btn btn-group pull-right">
+                    <a asp-controller="Profile" asp-action="List" class="btn btn-default">Show all Profiles</a>
+                    @*<a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-profileid="@Model.ProfileId">*@
+                    <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCartItems" asp-action="Create" asp-route-profileid="@Model.ProfileId">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

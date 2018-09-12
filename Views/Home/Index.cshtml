@@ -1,0 +1,13 @@
+﻿@model EasyMind.Models.HomeViewModel
+
+@await Html.PartialAsync("Carousel")
+
+<h2>EasyMind </h2>
+<h4>Profile</h4>
+
+<div class="row">
+    @foreach (var profile in Model.Username)
+    {
+        @Html.Partial("ProfileSummary", profile)
+    }
+</div>
