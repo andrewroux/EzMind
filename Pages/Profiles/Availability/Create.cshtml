@@ -1,0 +1,333 @@
+﻿@page
+@model EasyMind.Pages.Profiles.Availability.CreateModel
+<script src="~/lib/clockpicker-gh-pages/src/clockpicker.js"></script>
+<h4>ProfileAvailability</h4>
+<hr />
+<div class="row">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Enter Your Week Day Availability</h4>
+                <div class="form-group">
+                    <select asp-for="ProfileAvailability.Day1" asp-items="Html.GetEnumSelectList<WeekDay>()" class="form-control"></select>
+                    <span asp-validation-for="ProfileAvailability.Day1" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h4>From</h4>
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day1ST" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="oddNumber" style="display:none">
+                    <div id="myContent" class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day1ST1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h4>To</h4>
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day1ET" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="oddNumber" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day1ET1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h4>Add Days</h4>
+                <img src="~/images/Green_cross.svg.png" style="width:10%" onclick="toggleByClass('oddNumber')" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select asp-for="ProfileAvailability.Day2" asp-items="Html.GetEnumSelectList<WeekDay>()" class="form-control"></select>
+                    <span asp-validation-for="ProfileAvailability.Day2" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day2ST" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="tue" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day2ST1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day2ET" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="tue" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day2ET1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="~/images/Green_cross.svg.png" style="width:10%" onclick="toggleByClass('tue')" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select asp-for="ProfileAvailability.Day3" asp-items="Html.GetEnumSelectList<WeekDay>()" class="form-control"></select>
+                    <span asp-validation-for="ProfileAvailability.Day3" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day3ST" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="wed" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day3ST1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day3ET" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="wed" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day3ET1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="~/images/Green_cross.svg.png" style="width:10%" onclick="toggleByClass('wed')" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select asp-for="ProfileAvailability.Day4" asp-items="Html.GetEnumSelectList<WeekDay>()" class="form-control"></select>
+                    <span asp-validation-for="ProfileAvailability.Day4" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day4ST" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="thu" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day4ST1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day4ET" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="thu" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day4ET1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="~/images/Green_cross.svg.png" style="width:10%" onclick="toggleByClass('thu')" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select asp-for="ProfileAvailability.Day5" asp-items="Html.GetEnumSelectList<WeekDay>()" class="form-control"></select>
+                    <span asp-validation-for="ProfileAvailability.Day5" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day4ST" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="fri" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day4ST1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day4ET" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="fri" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day4ET1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="~/images/Green_cross.svg.png" style="width:10%" onclick="toggleByClass('fri')" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select asp-for="ProfileAvailability.Day6" asp-items="Html.GetEnumSelectList<WeekDay>()" class="form-control"></select>
+                    <span asp-validation-for="ProfileAvailability.Day6" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day6ST" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="sat" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day6ST1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day6ET" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="sat" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day6ET1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="~/images/Green_cross.svg.png" style="width:10%" onclick="toggleByClass('sat')" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select asp-for="ProfileAvailability.Day7" asp-items="Html.GetEnumSelectList<WeekDay>()" class="form-control"></select>
+                    <span asp-validation-for="ProfileAvailability.Day7" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day7ST" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="sun" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day7ST1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group clockpicker" data-autoclose="true">
+                    <input asp-for="ProfileAvailability.Day7ET" type="text" class="form-control" value="00:00" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="sun" style="display:none">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input asp-for="ProfileAvailability.Day7ET1" type="text" class="form-control" value="00:00" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="~/images/Green_cross.svg.png" style="width:10%" onclick="toggleByClass('sun')" />
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+<div>
+    
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        $('.clockpicker').clockpicker();
+        function toggleByClass(className) {
+            $("." + className).toggle();
+        }
+    </script>
+
+
+}

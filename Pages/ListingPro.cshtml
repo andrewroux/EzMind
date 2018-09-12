@@ -1,0 +1,196 @@
+﻿@page
+@model EasyMind.Pages.ListingProModel
+<link rel="stylesheet" href="~/css/profileCSS2.css">
+<style>
+        .align-text {
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        span {
+            display: block;
+        }
+    </style>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+            .row.content {
+                height: 1500px
+            }
+
+            /* Set gray background color and 100% height */
+            .sidenav {
+                background-color: #f1f1f1;
+                height: 100%;
+            }
+
+            /* Set black background color, white text and some padding */
+            footer {
+                background-color: #555;
+                color: white;
+                padding: 15px;
+            }
+
+            /* On small screens, set height to 'auto' for sidenav and grid */
+            media screen and (max-width: 767px) {
+                .sidenav
+
+            {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-3 sidenav" id="map">
+                    <h4>Minders in your areag</h4>
+                    <fieldset>
+                        <div style="width: 200px; height: 200px;">
+                            @*set google map size .*@
+                        </div>
+
+                        <script type="text/javascript">
+
+        var markers = @Html.Raw(ViewBag.Markers); //all string value of column properties to viewbag.
+        window.onload = function () {
+            var map = {
+                center: new google.maps.LatLng(53.350140,-6.266155), //which city will be shown.
+                zoom: 12, //google map page zoom
+                mapTypeId: google.maps.MapTypeId.ROADMAP //type of view.
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var map = new google.maps.Map(document.getElementById("map"), map);//pass div id and google map load values.
+            for (i = 0; i < markers.length; i++) { //here load all city map name
+                var data = markers[i]
+                var myLatlng = new google.maps.LatLng(data.lat, data.lng); //here i assigned lat and long.
+                var marker = new google.maps.Marker({
+                    position: myLatlng, //lat and long value
+                    map: map, //div id
+                    title: data.title //city name
+                });
+                (function (marker, data) { //here city map description after click on it.
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        infoWindow.setContent(data.description); //city description value
+                        infoWindow.open(map, marker); //then pop will show  the description
+                    });
+                })(marker, data);
+            }
+        }
+                        </script>
+                        <script async defer
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb4QDT4bh3de2CzhbtaMOVD51y8s-WP9E"></script>
+                    </fieldset>
+
+                    <div class="input-group">
+                        <form>
+                            <input class="form-control" type="text" name="SearchString">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" value="Filter" type="button">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+                @foreach (var item in Model.ProfileVmModel)
+                {
+                    if (item != null)
+                    {
+                <div class="login-block">
+                    <div style="width:100%" id="mainCont">
+                        <div class="col-sm-4 card-profile text-center " style="width:40%; color:#DE6262">
+                            <img class="card-img-top" style="width:100%;max-height:100px" src="#" /> @*~/images/photo-1512089425728-b012186ab3cc.jpg*@
+                            <div class="card-block">
+                                <div>
+                                    <img class="card-img-profile" style="width:100%" src="~/Uploads/@item.imageVm.ImagePath" />
+                                </div>
+                                    <div class="card-title">
+                                    <h3>Babysitter</h3>
+                                </div>
+                                <div>
+                                    <form class="rating">
+                                        <label>
+                                            <input type="radio" name="stars" value="5" />
+                                            <span class="icon">★</span>
+                                            <span class="icon">★</span>
+                                            <span class="icon">★</span>
+                                            <span class="icon">★</span>
+                                            <span class="icon">★</span>
+                                        </label>
+                                    </form>
+                                    <div>
+                                        <h2 class="text-center">
+                                            <i class="fa fa-book fa-a"></i>
+                                            <i class="fa fa-calendar"></i>
+                                            <i class="fa fa-info-circle"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-pencil"></i>
+                                            <i class="fa fa-heart"></i>
+                                            <i class="fa fa-certificate"></i>
+                                        </h2>
+                                    </div>
+
+                                    <h5 style="height: 10px;">
+                                        <span class="icon-stack float-right" style="text-align:center; padding-right:6px;">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span class="icon-stack"><strong>@item.profileVm.City</strong></span>
+                                        </span>
+                                    </h5>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <h2 class="text-center">@item.profileVm.FirstName @item.profileVm.LastName</h2>
+                            <br />
+                            <div class="d-block text-justify" style="overflow: hidden; background-color:azure">
+                                @item.profileVm.AboutMe
+                            </div>
+                            <br />
+                            <button type="submit" class="btn btn-success float-right">Book now</button>
+                            <button type="submit" class="btn btn-success float-right">Send a Message</button>
+                            <br />
+                        </div>
+
+                    </div>
+                    <a class="btn btn-default" asp-page="./Listing" asp-route-id="@item.profileVm.ProfileId">More</a>
+                        <a class="btn btn-default" asp-page="./Bookings/Create" asp-route-id="@item.profileVm.ProfileId">Booking</a>
+</div>
+
+                    }
+                    }
+                </div>
+        </div>
+    </body>
+</html>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+    
+
+
+
+
+
+
+

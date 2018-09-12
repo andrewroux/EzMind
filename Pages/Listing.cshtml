@@ -1,0 +1,109 @@
+﻿@page
+@model EasyMind.Pages.ListingModel
+<link rel="stylesheet" href="~/css/profileCSS.css">
+@foreach (var item in Model.ProfileVmModel)
+{
+    
+
+        <style>
+            .align-text {
+                display: inline-block;
+                text-align: center;
+                vertical-align: top;
+            }
+
+            span {
+                display: block;
+            }
+        </style>
+        <div class="bg-light">
+            <section class="login-block">
+                <div class="container" id="mainCont" style="width:95%">
+                    <div class="row">
+
+                        <div class="col-md-4 login-sec">
+                            <h2 class="text-center">Sitter</h2>
+                            <!--Sitter Profilecard-->
+                            <div class="card-profile text-center " style="width:300px">
+                                <img class="card-img-top" style="width:300px" src="~/images/photo-1512089425728-b012186ab3cc.jpg" size="" />
+                                <div class="card-block">
+                                    <img class="card-img-profile" style="width:200px" src="~/Uploads/@item.imageVm.ImagePath" />
+                                    <div class="card-title">
+                                        <h4>@item.profileVm.FirstName @item.profileVm.LastName</h4>
+                                        <small>Babysitter</small>
+                                    </div>
+                                    <div>
+                                        <form class="rating">
+                                            <label>
+                                                <input type="radio" name="stars" value="1" />
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="2" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="3" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="4" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="5" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                        </form>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-success btn-lg" id="btnLogin">Book now</button>
+                                    <div>
+                                    <h5 style="height: 10px;">
+                                        <span class="icon-stack float-right" style="text-align:center; padding-right:6px;">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span class="icon-stack"><strong>@item.profileVm.City</strong></span>
+                                        </span>
+                                    </h5>
+                                        <br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Bios-->
+                        </div>
+                        <div class="col-md-7 login-sec">
+                            <h2 class="text-center">About Me</h2>
+                            <br />
+                            <p>@item.profileVm.AboutMe</p>
+                        <br />
+                        <br />
+                        <br />
+                        <h2 class="text-center">Badges</h2>
+                        <h2 class="text-center">
+                            <i class="fa fa-book fa-lg"></i>
+                            <i class="fa fa-calendar fa-lg"></i>
+                            <i class="fa fa-info-circle fa-lg"></i>
+                            <i class="fa fa-star fa-lg"></i>
+                            <i class="fa fa-pencil fa-lg"></i>
+                            <i class="fa fa-heart fa-lg"></i>
+                            <i class="fa fa-certificate fa-lg"></i>
+                        </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    }
+}
+
+       

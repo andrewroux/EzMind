@@ -1,0 +1,33 @@
+﻿@page
+@model EasyMind.Pages.Profiles.CreateImageModel
+
+<h4>Image</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <h4>Upload Your Profile Picture</h4>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Image.OwnerID" class="form-control" />
+
+            <div class="form-group">
+                <label asp-for="Image.UploadImage" class="control-label"></label>
+                <input asp-for="Image.UploadImage" type="file" class="form-control" />
+                <span asp-validation-for="Image.UploadImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button id="btnSave" type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

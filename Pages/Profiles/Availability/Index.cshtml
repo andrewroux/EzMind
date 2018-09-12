@@ -1,0 +1,234 @@
+﻿@page
+@model EasyMind.Pages.Profiles.Availability.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day5)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day6)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day7)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day1ST)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day1ET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day1ST1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day1ET1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day2ST)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day2ET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day2ST1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day2ET1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day3ST)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day3ET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day3ST1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day3ET1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day4ST)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day4ET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day4ST1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day4ET1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day5ST)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day5ET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day5ST1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day5ET1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day6ST)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day6ET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day6ST1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day6ET1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day7ST)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day7ET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day7ST1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileAvailability[0].Day7ET1)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ProfileAvailability) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day1ST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day1ET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day1ST1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day1ET1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day2ST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day2ET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day2ST1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day2ET1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day3ST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day3ET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day3ST1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day3ET1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day4ST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day4ET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day4ST1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day4ET1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day5ST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day5ET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day5ST1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day5ET1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day6ST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day6ET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day6ST1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day6ET1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day7ST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day7ET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day7ST1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day7ET1)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ProAId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ProAId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ProAId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

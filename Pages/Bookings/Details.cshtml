@@ -1,0 +1,37 @@
+﻿@page
+@model EasyMind.Pages.Bookings.DetailsModel
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Booking.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Booking.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking.StartTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Booking.StartTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Booking.Amount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Booking.BookingId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

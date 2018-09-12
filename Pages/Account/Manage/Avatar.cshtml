@@ -1,0 +1,31 @@
+﻿@page
+@model EasyMind.Pages.Account.Manage.AvatarModel
+@{
+    ViewData["Title"] = "Profile Picture";
+    ViewData["ActivePage"] = "ProfilePic";
+
+}
+<h1></h1>
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+<form method="post" class="form-horizontal" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Profile.UserName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Profile.UserName" class="form-control" />
+            <span asp-validation-for="Profile.UserName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Profile.Upload" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Profile.Upload" type="file" class="form-control" style="height:auto" />
+            <span asp-validation-for="Profile.Upload" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button id="btnSave" type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>
